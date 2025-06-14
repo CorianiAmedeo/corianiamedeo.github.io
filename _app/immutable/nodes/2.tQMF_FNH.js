@@ -1,1 +1,0 @@
-import{f as t,a}from"../chunks/-2bzHoFH.js";import"../chunks/BwkLXGy5.js";import{n as e}from"../chunks/BGMXXjSx.js";var p=t('<h1 class="text-3xl font-bold">Work in progress</h1> <p>Visit <a href="/work">work</a> to see my projects.</p>',1);function f(o){var r=p();e(2),a(o,r)}export{f as component};
