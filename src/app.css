@@ -1,0 +1,216 @@
+@import './reset.css';
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+:root {
+    --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+    
+     /* Font Weights */
+    --font-light: 300;
+    --font-normal: 400;
+    --font-medium: 500;
+    --font-semibold: 600;
+    --font-bold: 700;
+    
+    /* Font Sizes */
+    --text-xs: 0.75rem;    /* 12px */
+    --text-sm: 0.875rem;   /* 14px */
+    --text-base: 1rem;     /* 16px */
+    --text-lg: 1.125rem;   /* 18px */
+    --text-xl: 1.25rem;    /* 20px */
+    --text-2xl: 1.5rem;    /* 24px */
+    --text-3xl: 1.875rem;  /* 30px */
+    --text-4xl: 2.25rem;   /* 36px */
+    --text-5xl: 3rem;      /* 48px */
+    --text-6xl: 3.75rem;   /* 60px */
+    --text-7xl: 4.5rem;    /* 72px */
+    --text-8xl: 6rem;      /* 96px */
+
+    /* Line-height */
+    --line-height-xs: 200%;  
+    --line-height-sm: 200%; 
+    --line-height-base: 150%;   
+    --line-height-lg: 150%; 
+    --line-height-xl: 125%;  
+    --line-height-2xl: 125%;  
+    --line-height-3xl: 110%;
+    --line-height-4xl: 110%; 
+    --line-height-5xl: 100%;    
+    --line-height-6xl: 100%; 
+    --line-height-7xl: 95%;
+    --line-height-8xl: 95%;
+
+
+    /* Letter-spacing */
+    --letter-spacing-xs: 0.04em;  
+    --letter-spacing-sm: 0.04em; 
+    --letter-spacing-base: 0.02em;   
+    --letter-spacing-lg: 0.02em; 
+    --letter-spacing-xl: 0em;  
+    --letter-spacing-2xl: 0em;  
+    --letter-spacing-3xl: 0em;
+    --letter-spacing-4xl: 0em; 
+    --letter-spacing-5xl: -0.02em;    
+    --letter-spacing-6xl: -0.02em; 
+    --letter-spacing-7xl: -0.04em;
+    --letter-spacing-8xl: -0.04em;
+
+
+    /* Spacing */
+    --space-1: 0.25rem;    /* 4px */
+    --space-2: 0.5rem;     /* 8px */
+    --space-3: 0.75rem;    /* 12px */
+    --space-4: 1rem;       /* 16px */
+    --space-6: 1.5rem;     /* 24px */
+    --space-8: 2rem;       /* 32px */
+    --space-12: 3rem;      /* 48px */
+    --space-16: 4rem;      /* 64px */
+    --space-24: 6rem;      /* 96px */
+    --space-32: 8rem;      /* 128px */
+    --space-48: 12rem;     /* 192px */
+    --space-64: 16rem;     /* 256px */
+    --space-96: 24rem;     /* 384px */
+    --space-128: 32rem;    /* 512px */
+    --space-160: 40rem;    /* 640px */
+    --space-192: 48rem;    /* 768px */
+
+    /*Sections spacing*/
+    --section-xl: 56.25rem; /* 900px */
+    --section-md: 37.5rem; /* 600px */
+    --section-spacing: var(--space-32); /* 128px */
+    
+    /* Neutral Dark */
+    --neutral-dark-h: 240;
+    --neutral-dark-s: 11%;
+    --neutral-dark-l: 8%;
+    
+    /* Neutral Light */
+    --neutral-light-h: 60;
+    --neutral-light-s: 9%;
+    --neutral-light-l: 92%;
+    
+    /* Color 1 */
+    --color1-h: 243;
+    --color1-s: 58%;
+    --color1-l: 77%;
+    
+    /* Color 2 */
+    --color2-h: 47;
+    --color2-s: 95%;
+    --color2-l: 56%;
+
+    /* Neutrals */
+    --neutral-dark: var(--neutral-dark-h), var(--neutral-dark-s), var(--neutral-dark-l);
+    --neutral-light: var(--neutral-light-h), var(--neutral-light-s), var(--neutral-light-l);
+    
+    /* Brand Colors */
+    --color1: var(--color1-h), var(--color1-s), var(--color1-l);
+    --color2: var(--color2-h), var(--color2-s), var(--color2-l);
+    
+}
+
+/* Apply to all */
+*, html, body {
+    font-family: var(--font-family);
+}
+
+html, body {
+    background-color: hsl(var(--color2));
+    overflow-x: hidden;
+}
+
+/* Ensure form elements inherit */
+button, input, textarea, select {
+    font-family: inherit;
+}
+
+/* Font Weights */
+.font-light { font-weight: var(--font-light); }
+.font-normal { font-weight: var(--font-normal); }
+.font-medium { font-weight: var(--font-medium); }
+.font-semibold { font-weight: var(--font-semibold); }
+.font-bold { font-weight: var(--font-bold); }
+
+/* Font Sizes, Line Heights, and Letter Spacing */
+.text-xs {
+    font-size: var(--text-xs);
+    line-height: var(--line-height-xs);
+    letter-spacing: var(--letter-spacing-xs);
+}
+.text-sm {
+    font-size: var(--text-sm);
+    line-height: var(--line-height-sm);
+    letter-spacing: var(--letter-spacing-sm);
+}
+.text-base {
+    font-size: var(--text-base);
+    line-height: var(--line-height-base);
+    letter-spacing: var(--letter-spacing-base);
+}
+.text-lg {
+    font-size: var(--text-lg);
+    line-height: var(--line-height-lg);
+    letter-spacing: var(--letter-spacing-lg);
+}
+.text-xl {
+    font-size: var(--text-xl);
+    line-height: var(--line-height-xl);
+    letter-spacing: var(--letter-spacing-xl);
+}
+.text-2xl {
+    font-size: var(--text-2xl);
+    line-height: var(--line-height-2xl);
+    letter-spacing: var(--letter-spacing-2xl);
+}
+.text-3xl {
+    font-size: var(--text-3xl);
+    line-height: var(--line-height-3xl);
+    letter-spacing: var(--letter-spacing-3xl);
+}
+.text-4xl {
+    font-size: var(--text-4xl);
+    line-height: var(--line-height-4xl);
+    letter-spacing: var(--letter-spacing-4xl);
+}
+.text-5xl { font-size: var(--text-5xl); 
+    line-height: var(--line-height-5xl); 
+    letter-spacing: var(--letter-spacing-5xl); 
+}
+.text-6xl { font-size: var(--text-6xl); 
+    line-height: var(--line-height-6xl); 
+    letter-spacing: var(--letter-spacing-6xl); 
+}
+.text-7xl { font-size: var(--text-7xl); 
+    line-height: var(--line-height-7xl); 
+    letter-spacing: var(--letter-spacing-7xl); 
+}
+.text-8xl { font-size: var(--text-8xl); 
+    line-height: var(--line-height-8xl); 
+    letter-spacing: var(--letter-spacing-8xl); 
+}
+
+/*Text colors*/
+.text-dark-primary { color: hsla(var(--neutral-dark), 1); }
+.text-dark-secondary { color: hsla(var(--neutral-dark), 0.7); }
+
+.text-light-primary { color: hsla(var(--neutral-light), 1); }
+.text-light-secondary { color: hsla(var(--neutral-light), 0.6); }
+
+/*background colors*/
+.background-dark { background-color: hsla(var(--neutral-dark), 1); }
+.background-light { background-color: hsla(var(--neutral-light), 1); }
+.background-purple { background-color: hsla(var(--color1), 1); }
+.background-yellow { background-color: hsla(var(--color2), 1); }
+
+/*Details colors*/
+.details-dark { color: hsla(var(--neutral-dark), 0.3); }
+.details-light { color: hsla(var(--neutral-light), 0.2); }
+.details-purple { color: hsla(var(--color1), 0.5); }
+.details-yellow { color: hsla(var(--color2), 0.6); }
+
+/*Prevent text selection*/
+.prevent-select {
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+}
