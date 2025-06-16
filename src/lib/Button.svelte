@@ -21,9 +21,14 @@
 </a>
 
 <style>
-    button{
+    button, a{
         display: flex;
         justify-content: center;
+        flex-shrink: 0;
+    }
+
+    button{
+        flex-grow: 1;
         gap: var(--space-2);
 
         border-radius: 1.5rem;
