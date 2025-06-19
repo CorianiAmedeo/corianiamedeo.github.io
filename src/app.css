@@ -77,6 +77,7 @@
     /*Sections spacing*/
     --section-xl: 56.25rem; /* 900px */
     --section-md: 37.5rem; /* 600px */
+    --section-sm: 25rem; /* 400px */
     --section-spacing: var(--space-32); /* 128px */
     
     /* Neutral Dark */
