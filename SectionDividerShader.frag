@@ -14,10 +14,10 @@ const float HASH_MULT = 43758.5453123;
 // Wave noise parameters - adjust these to control scale and dimensions
 const float WAVE_FREQUENCY = 2.0;        // How many wave cycles vertically
 const float WAVE_DISTORTION = 2.0;       // How much the waves bend/distort
-const float NOISE_SCALE_X = 1.0;         // Horizontal noise stretch (higher = more stretched)
-const float NOISE_SCALE_Y = 1.0;         // Vertical noise stretch
-const float NOISE_SPEED = 0.025;         // Animation speed of wave distortion
-const float GENERAL_SPEED = 0.5;
+const float NOISE_SCALE_X = 4.0;         // Horizontal noise stretch (higher = more stretched)
+const float NOISE_SCALE_Y = 1.;         // Vertical noise stretch
+const float NOISE_SPEED = .1;         // Animation speed of wave distortion
+const float TEXTURE_NOISE_SPEED = .5;
 
 // Improved hash function
 float hash(vec2 p) {
@@ -60,7 +60,7 @@ float parabola(float x, float k) {
 void main() {
     // Pixelation setup (non-square pixels)
     float pixel_height = u_resolution.y / 6.0;
-    float pixel_width = pixel_height * 0.75;
+    float pixel_width = pixel_height * 0.6;
     vec2 pixel_size = vec2(pixel_width, pixel_height);
     vec2 pixelated_coord = floor(gl_FragCoord.xy / pixel_size) * pixel_size + pixel_size * 0.5;
     vec2 st = pixelated_coord / u_resolution.x;
@@ -71,15 +71,11 @@ void main() {
     
     // Create wavy lines
     float line_pattern = fract(st.y * WAVE_FREQUENCY + primary_noise * WAVE_DISTORTION);
-    float line_width = 1.0 - parabola(line_pattern, 0.25);
-    
-    // Add subtle texture noise
-    float texture_noise = noise(st * 50.0 + u_time * GENERAL_SPEED) * 0.5 + 0.5;
-    line_width += texture_noise * 0.15;
-    line_width = clamp(line_width, 0.0, 1.0);
-    
-    // Mouse interaction - GLSLCanvas specific handling
-    float mouse_influence = 1.0;
+    float line_width = 1.0 - parabola(line_pattern, 0.6);
+
+    float texture_noise = noise(st * 50.0 + u_time * TEXTURE_NOISE_SPEED) * 0.5 + 0.5;
+    line_width += texture_noise * 0.1;
+    line_width = clamp(line_width, 0.1, .9);
     
     // Calculate visibility based on pixel position within line
     float local_x = fract(gl_FragCoord.x / pixel_width);
