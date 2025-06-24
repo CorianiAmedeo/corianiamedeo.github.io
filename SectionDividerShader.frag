@@ -3,8 +3,7 @@ precision mediump float;
 #endif
 
 uniform vec2 u_resolution;
-uniform vec2 u_mouse;
-uniform float u_time;
+uniform highp float u_time;
 
 // Constants
 const float PI = 3.14159265359;
@@ -12,12 +11,12 @@ const vec2 HASH_SEED = vec2(12.9898, 78.233);
 const float HASH_MULT = 43758.5453123;
 
 // Wave noise parameters - adjust these to control scale and dimensions
-const float WAVE_FREQUENCY = 2.0;        // How many wave cycles vertically
-const float WAVE_DISTORTION = 2.0;       // How much the waves bend/distort
-const float NOISE_SCALE_X = 4.0;         // Horizontal noise stretch (higher = more stretched)
-const float NOISE_SCALE_Y = 1.;         // Vertical noise stretch
+const float WAVE_FREQUENCY = 6.0;        // How many wave cycles vertically
+const float WAVE_DISTORTION = 6.0;       // How much the waves bend/distort
+const float NOISE_SCALE_X = 20.;         // Horizontal noise stretch (higher = more stretched)
+const float NOISE_SCALE_Y = .1;         // Vertical noise stretch
 const float NOISE_SPEED = .1;         // Animation speed of wave distortion
-const float TEXTURE_NOISE_SPEED = .5;
+const float TEXTURE_NOISE_SPEED = .5;         // Animation speed of texture noise
 
 // Improved hash function
 float hash(vec2 p) {
@@ -59,21 +58,21 @@ float parabola(float x, float k) {
 
 void main() {
     // Pixelation setup (non-square pixels)
-    float pixel_height = u_resolution.y / 6.0;
-    float pixel_width = pixel_height * 0.6;
+    float pixel_height = u_resolution.y / 5.0;
+    float pixel_width = pixel_height * 0.7;
     vec2 pixel_size = vec2(pixel_width, pixel_height);
-    vec2 pixelated_coord = floor(gl_FragCoord.xy / pixel_size) * pixel_size + pixel_size * 0.5;
-    vec2 st = pixelated_coord / u_resolution.x;
+    vec2 pixelated_coord = floor(gl_FragCoord.xy / pixel_size);
+    vec2 st = pixelated_coord / u_resolution;
     
     // Primary noise for wave distortion
     vec2 noise_coord = vec2(st.x * NOISE_SCALE_X, st.y * NOISE_SCALE_Y);
-    float primary_noise = noise(noise_coord + u_time * NOISE_SPEED) * 0.5 + 0.5;
+    float primary_noise = noise(noise_coord + u_time * NOISE_SPEED);
     
     // Create wavy lines
     float line_pattern = fract(st.y * WAVE_FREQUENCY + primary_noise * WAVE_DISTORTION);
-    float line_width = 1.0 - parabola(line_pattern, 0.6);
+    float line_width = 1.0 - parabola(line_pattern, 2.);
 
-    float texture_noise = noise(st * 50.0 + u_time * TEXTURE_NOISE_SPEED) * 0.5 + 0.5;
+    float texture_noise = noise(st * 50.0 + u_time * TEXTURE_NOISE_SPEED);
     line_width += texture_noise * 0.1;
     line_width = clamp(line_width, 0.1, .9);
     
