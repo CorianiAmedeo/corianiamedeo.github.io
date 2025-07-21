@@ -3,88 +3,62 @@ precision mediump float;
 #endif
 
 uniform vec2 u_resolution;
-uniform highp float u_time;
+uniform float u_time;
+uniform vec2 u_mouse; // Mouse position in screen coordinates
 
-// Constants
-const float PI = 3.14159265359;
+// Optimized constants
+const float PI2 = 6.28318530718;
 const vec2 HASH_SEED = vec2(12.9898, 78.233);
-const float HASH_MULT = 43758.5453123;
 
-// Wave noise parameters - adjust these to control scale and dimensions
-const float WAVE_FREQUENCY = 6.0;        // How many wave cycles vertically
-const float WAVE_DISTORTION = 6.0;       // How much the waves bend/distort
-const float NOISE_SCALE_X = 20.;         // Horizontal noise stretch (higher = more stretched)
-const float NOISE_SCALE_Y = .1;         // Vertical noise stretch
-const float NOISE_SPEED = .1;         // Animation speed of wave distortion
-const float TEXTURE_NOISE_SPEED = .5;         // Animation speed of texture noise
+// Combined parameters
+const float WAVE_FREQ = 6.0;
+const float WAVE_DISTORT = 6.0;
+const vec2 NOISE_SCALE = vec2(20.0, 0.1);
+const vec2 NOISE_SPEED = vec2(0.1, 0.5);
 
-// Improved hash function
+// Fast hash function
 float hash(vec2 p) {
-    return fract(sin(dot(p, HASH_SEED)) * HASH_MULT);
+    return fract(sin(dot(p, HASH_SEED)) * 43758.5453);
 }
 
-// Generate gradient vector from hash
-vec2 grad(float h) {
-    float angle = h * 2.0 * PI;
-    return vec2(cos(angle), sin(angle));
-}
-
-// Perlin noise implementation
+// Simplified noise using built-in smoothstep
 float noise(vec2 p) {
     vec2 i = floor(p);
     vec2 f = fract(p);
-    vec2 u = f * f * (3.0 - 2.0 * f); // Smoothstep interpolation
+    vec2 u = smoothstep(0.0, 1.0, f);
     
-    // Get gradients at corners
-    vec2 g00 = grad(hash(i));
-    vec2 g10 = grad(hash(i + vec2(1.0, 0.0)));
-    vec2 g01 = grad(hash(i + vec2(0.0, 1.0)));
-    vec2 g11 = grad(hash(i + vec2(1.0, 1.0)));
+    float a = hash(i);
+    float b = hash(i + vec2(1.0, 0.0));
+    float c = hash(i + vec2(0.0, 1.0));
+    float d = hash(i + vec2(1.0, 1.0));
     
-    // Calculate dot products
-    float n00 = dot(g00, f);
-    float n10 = dot(g10, f - vec2(1.0, 0.0));
-    float n01 = dot(g01, f - vec2(0.0, 1.0));
-    float n11 = dot(g11, f - vec2(1.0, 1.0));
-    
-    // Bilinear interpolation
-    return mix(mix(n00, n10, u.x), mix(n01, n11, u.x), u.y);
-}
-
-// Parabolic curve function
-float parabola(float x, float k) {
-    return pow(4.0 * x * (1.0 - x), k);
+    return mix(mix(a, b, u.x), mix(c, d, u.x), u.y);
 }
 
 void main() {
-    // Pixelation setup (non-square pixels)
-    float pixel_height = u_resolution.y / 5.0;
-    float pixel_width = pixel_height * 0.7;
-    vec2 pixel_size = vec2(pixel_width, pixel_height);
-    vec2 pixelated_coord = floor(gl_FragCoord.xy / pixel_size);
-    vec2 st = pixelated_coord / u_resolution;
+    // Simplified pixelation
+    vec2 pixel_size = vec2(u_resolution.y * 0.14, u_resolution.y * 0.2);
+    vec2 st = floor(gl_FragCoord.xy / pixel_size) / u_resolution;
     
-    // Primary noise for wave distortion
-    vec2 noise_coord = vec2(st.x * NOISE_SCALE_X, st.y * NOISE_SCALE_Y);
-    float primary_noise = noise(noise_coord + u_time * NOISE_SPEED);
+    // Combined noise calculation
+    float wave_noise = noise(st * NOISE_SCALE + u_time * NOISE_SPEED.x);
     
-    // Create wavy lines
-    float line_pattern = fract(st.y * WAVE_FREQUENCY + primary_noise * WAVE_DISTORTION);
-    float line_width = 1.0 - parabola(line_pattern, 2.);
-
-    float texture_noise = noise(st * 50.0 + u_time * TEXTURE_NOISE_SPEED);
-    line_width += texture_noise * 0.1;
-    line_width = clamp(line_width, 0.1, .9);
+    // Wavy lines with simplified parabolic curve
+    float line_pattern = fract(st.y * WAVE_FREQ + wave_noise * WAVE_DISTORT);
+    float line_curve = line_pattern * (1.0 - line_pattern) * 4.0; // Simplified parabola
+    float line_width = 1.0 - line_curve * line_curve;
     
-    // Calculate visibility based on pixel position within line
-    float local_x = fract(gl_FragCoord.x / pixel_width);
+    // Add texture noise
+    line_width += noise(st * 50.0 + u_time * NOISE_SPEED.y) * 0.1;
+    line_width = clamp(line_width, 0.1, 0.9);
+    
+    // Visibility calculation
+    float local_x = fract(gl_FragCoord.x / pixel_size.x);
     float half_width = line_width * 0.5;
-    float visibility = step(0.5 - half_width, local_x) * step(local_x, 0.5 + half_width);
+    float visibility = smoothstep(0.5 - half_width, 0.5 - half_width + 0.01, local_x) * 
+                      smoothstep(0.5 + half_width, 0.5 + half_width - 0.01, local_x);
     
-    // Color mixing
-    vec3 bg_color = vec3(0.074, 0.074, 0.086);
-    vec3 line_color = vec3(0.65, 0.64, 0.89);
-    vec3 final_color = mix(bg_color, line_color, visibility);
-    
+    // Final color
+    vec3 final_color = mix(vec3(0.074, 0.074, 0.086), vec3(0.65, 0.64, 0.89), visibility);
     gl_FragColor = vec4(final_color, 1.0);
 }
