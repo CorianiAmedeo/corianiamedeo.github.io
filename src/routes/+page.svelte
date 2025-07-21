@@ -13,10 +13,10 @@
 <Navbar home={"true"} />
 <Hero />
 <Intro />
-<!-- <SectionDivider /> -->
+<SectionDivider />
 <Foundations />
 <Principles />
 <Skills />
-<!-- <SectionDivider /> -->
+<SectionDivider />
 <More />
 <Footer />

@@ -57,19 +57,19 @@
 			<nav class="row-2">
 				<ul>
 					<li>
-						<a href="/" class="text-base {home ? 'text-light-primary' : 'text-light-secondary'}"
+						<a href="/" class="text-base font-medium {home ? 'text-light-primary' : 'text-light-secondary font-light'}"
 							>Home</a
 						>
 					</li>
 					<li in:slide={{ duration: 150 }}>
-						<a href="/work" class="text-base {work ? 'text-light-primary' : 'text-light-secondary'}"
+						<a href="/work" class="text-base font-medium {work ? 'text-light-primary' : 'text-light-secondary'}"
 							>Work</a
 						>
 					</li>
 					<li in:slide={{ duration: 150 }}>
 						<a
 							href="/about"
-							class="text-base {about ? 'text-light-primary' : 'text-light-secondary'}">About</a
+							class="text-base font-medium {about ? 'text-light-primary' : 'text-light-secondary'}">About</a
 						>
 					</li>
 				</ul>

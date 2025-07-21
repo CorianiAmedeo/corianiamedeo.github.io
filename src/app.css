@@ -6,11 +6,11 @@
     --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
     
      /* Font Weights */
-    --font-light: 300;
-    --font-normal: 400;
-    --font-medium: 500;
-    --font-semibold: 600;
-    --font-bold: 700;
+    --font-light: 200;
+    --font-normal: 300;
+    --font-medium: 400;
+    --font-semibold: 500;
+    --font-bold: 600;
     
     /* Font Sizes */
     --font-size-xs: 0.75rem;    /* 12px */
@@ -91,23 +91,23 @@
     --neutral-light-s: 9%;
     --neutral-light-l: 92%;
     
-    /* Color 1 */
-    --color1-h: 243;
-    --color1-s: 58%;
-    --color1-l: 77%;
+    /* Primary */
+    --primary-h: 243;
+    --primary-s: 58%;
+    --primary-l: 77%;
     
-    /* Color 2 */
-    --color2-h: 47;
-    --color2-s: 95%;
-    --color2-l: 56%;
+    /* Detail */
+    --detail-h: 48;
+    --detail-s: 95%;
+    --detail-l: 55%;
 
     /* Neutrals */
     --neutral-dark: var(--neutral-dark-h), var(--neutral-dark-s), var(--neutral-dark-l);
     --neutral-light: var(--neutral-light-h), var(--neutral-light-s), var(--neutral-light-l);
     
     /* Brand Colors */
-    --color1: var(--color1-h), var(--color1-s), var(--color1-l);
-    --color2: var(--color2-h), var(--color2-s), var(--color2-l);   
+    --primary: var(--primary-h), var(--primary-s), var(--primary-l); 
+    --detail: var(--detail-h), var(--detail-s), var(--detail-l); 
 }
 
 /* Apply to all */
@@ -131,67 +131,92 @@ button, input, textarea, select {
 }
 
 /* Font Weights (remain global as they are not screen-size dependent) */
-.font-light { font-weight: var(--font-light); }
-.font-normal { font-weight: var(--font-normal); }
-.font-medium { font-weight: var(--font-medium); }
-.font-semibold { font-weight: var(--font-semibold); }
-.font-bold { font-weight: var(--font-bold); }
+.font-light { 
+    font-weight: var(--font-light);
+}
+
+.font-normal { 
+    font-weight: var(--font-normal);
+}
+
+.font-medium {
+    font-weight: var(--font-medium);
+}
+
+.font-semibold {
+     font-weight: var(--font-semibold);
+}
+
+.font-bold {
+     font-weight: var(--font-bold);
+}
 
 .text-xs {
     font-size: var(--font-size-xs);
     line-height: var(--line-height-xs);
     letter-spacing: var(--letter-spacing-xs);
 }
+
 .text-sm {
     font-size: var(--font-size-sm);
     line-height: var(--line-height-sm);
     letter-spacing: var(--letter-spacing-sm);
 }
+
 .text-base {
     font-size: var(--font-size-base);
     line-height: var(--line-height-base);
     letter-spacing: var(--letter-spacing-base);
 }
+
 .text-lg {
     font-size: var(--font-size-lg);
     line-height: var(--line-height-lg);
     letter-spacing: var(--letter-spacing-lg);
 }
+
 .text-xl {
     font-size: var(--font-size-xl);
     line-height: var(--line-height-xl);
     letter-spacing: var(--letter-spacing-xl);
 }
+
 .text-2xl {
     font-size: var(--font-size-2xl);
     line-height: var(--line-height-2xl);
     letter-spacing: var(--letter-spacing-2xl);
 }
+
 .text-3xl {
     font-size: var(--font-size-3xl);
     line-height: var(--line-height-3xl);
     letter-spacing: var(--letter-spacing-3xl);
 }
+
 .text-4xl {
     font-size: var(--font-size-4xl);
     line-height: var(--line-height-4xl);
     letter-spacing: var(--letter-spacing-4xl);
 }
+
 .text-5xl { 
     font-size: var(--font-size-5xl);
     line-height: var(--line-height-5xl);
     letter-spacing: var(--letter-spacing-5xl);
 }
+
 .text-6xl { 
     font-size: var(--font-size-6xl);
     line-height: var(--line-height-6xl);
     letter-spacing: var(--letter-spacing-6xl);
 }
+
 .text-7xl { 
     font-size: var(--font-size-7xl);
     line-height: var(--line-height-7xl);
     letter-spacing: var(--letter-spacing-7xl);
 }
+
 .text-8xl { 
     font-size: var(--font-size-8xl);
     line-height: var(--line-height-8xl);
@@ -208,14 +233,12 @@ button, input, textarea, select {
 /*background colors*/
 .background-dark { background-color: hsla(var(--neutral-dark), 1); }
 .background-light { background-color: hsla(var(--neutral-light), 1); }
-.background-purple { background-color: hsla(var(--color1), 1); }
-.background-yellow { background-color: hsla(var(--color2), 1); }
+.background-primary { background-color: hsla(var(--primary), 1); }
 
 /*Details colors*/
 .details-dark { color: hsla(var(--neutral-dark), 0.3); }
 .details-light { color: hsla(var(--neutral-light), 0.2); }
-.details-purple { color: hsla(var(--color1), 0.5); }
-.details-yellow { color: hsla(var(--color2), 0.6); }
+.details-primary { color: hsla(var(--primary), 0.5); }
 
 /*Prevent text selection*/
 .prevent-select {

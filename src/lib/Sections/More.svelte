@@ -1,2 +1,2 @@
-<section class="section background-purple">
+<section class="section background-primary">
 </section>

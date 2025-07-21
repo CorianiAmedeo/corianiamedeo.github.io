@@ -24,7 +24,7 @@
 <a {href} {target}>
 	<button
 		{onclick}
-		class="text-base {type}-{mode} {withIcon ? 'with-icon' : 'without-icon'}{onlyIcon
+		class="text-base font-medium {type}-{mode} {withIcon ? 'with-icon' : 'without-icon'}{onlyIcon
 			? '-only'
 			: ''}"
 	>
@@ -66,10 +66,12 @@
 
 	.primary-light {
 		color: hsla(var(--neutral-light), 1);
+		background-color: hsla(var(--neutral-dark), 1);
 	}
 
 	.secondary-light {
-		background-color: #000;
+		color: hsla(var(--neutral-dark), 1);
+		background-color: hsla(var(--neutral-dark), 0.15);
 	}
 
 	.primary-dark {
