@@ -6,6 +6,8 @@
 	import Foundations from "$lib/Sections/Foundations.svelte";
 	import Principles from "$lib/Sections/Principles.svelte";
 	import Skills from "$lib/Sections/Skills.svelte";
+	import MoreSkills from "$lib/Sections/MoreSkills.svelte";
+	import Tools from "$lib/Sections/Tools.svelte";
 	import More from "$lib/Sections/More.svelte";
 	import Footer from "$lib/Sections/Footer.svelte";
 </script>
@@ -17,6 +19,8 @@
 <Foundations />
 <Principles />
 <Skills />
+<MoreSkills />
+<Tools />
 <SectionDivider />
 <More />
 <Footer />

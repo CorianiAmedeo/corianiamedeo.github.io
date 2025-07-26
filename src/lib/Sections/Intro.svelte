@@ -44,6 +44,11 @@
         flex: 1;
     }
 
+    #intro::selection, #intro > *::selection {
+        color: hsl(var(--neutral-dark));
+        background: hsl(var(--neutral-light));
+    }
+
     .img-container {
         flex: 1;
         aspect-ratio: 1;

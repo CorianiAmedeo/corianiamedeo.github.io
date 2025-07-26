@@ -4,6 +4,7 @@
 	let {
 		type = 'primary',
 		mode = 'light',
+		status = '',
 		text = '',
 		icon = '',
 		onclick = '',
@@ -11,7 +12,8 @@
 		target = ''
 	} = $props();
 	let withIcon = $state(false),
-		onlyIcon = $state(false);
+		onlyIcon = $state(false),
+		isLink = $state(false);
 
 	if (text == '') {
 		onlyIcon = true;
@@ -19,9 +21,13 @@
 	if (icon != '') {
 		withIcon = true;
 	}
+	if (href != ''  && target != '') {
+		isLink = true;
+	}
 </script>
 
-<a {href} {target}>
+{#if isLink}
+<a {href} {target} class="{status}">
 	<button
 		{onclick}
 		class="text-base font-medium {type}-{mode} {withIcon ? 'with-icon' : 'without-icon'}{onlyIcon
@@ -37,10 +43,28 @@
 		{/if}
 	</button>
 </a>
+{:else}
+<div id="wrapper" class="{status}">
+	<button
+		{onclick}
+		class="text-base font-medium {type}-{mode} {withIcon ? 'with-icon' : 'without-icon'}{onlyIcon
+			? '-only'
+			: ''}"
+	>
+		{#if !onlyIcon}
+			{text}
+		{/if}
+
+		{#if withIcon}
+			<Icon name={icon} {type} {mode} />
+		{/if}
+	</button>
+</div>
+{/if}
 
 <style>
-	button,
-	a {
+	button, a,
+	#wrapper {
 		display: flex;
 		justify-content: center;
 		flex-shrink: 0;
@@ -89,7 +113,7 @@
 	}
 
 	.secondary-light:hover {
-		background-color: hsla(var(--neutral-dark), 0.18);
+		background-color: hsla(var(--neutral-dark), 0.24);
 	}
 
 	.primary-dark:hover {
@@ -97,6 +121,12 @@
 	}
 
 	.secondary-dark:hover {
-		background-color: hsla(var(--neutral-light), 0.18);
+		background-color: hsla(var(--neutral-light), 0.24);
+	}
+
+	.disabled {
+		pointer-events: none;
+		touch-action: none;
+		opacity: .4;
 	}
 </style>

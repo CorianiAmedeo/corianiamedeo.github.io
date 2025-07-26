@@ -1,12 +1,20 @@
 <script>
 	import ExternalLink from '$lib/Icons/ExternalLink.svelte';
 	import HamburgerMenu from '$lib/Icons/HamburgerMenu.svelte';
+	import ForwardArrow from '$lib/Icons/ForwardArrow.svelte';
+	import BackArrow from '$lib/Icons/BackArrow.svelte';
+	import Play from '$lib/Icons/Play.svelte';
+	import Pause from '$lib/Icons/Pause.svelte';
 
 	let { name = '', mode = 'light', type = 'primary' } = $props();
 
 	const iconComponents = {
 		ExternalLink,
-		HamburgerMenu
+		HamburgerMenu,
+		ForwardArrow,
+		BackArrow,
+		Play,
+		Pause
 	};
 
 	let CurrentIcon = $derived(iconComponents[name]);

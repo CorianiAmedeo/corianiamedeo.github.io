@@ -61,12 +61,12 @@
 							>Home</a
 						>
 					</li>
-					<li in:slide={{ duration: 150 }}>
+					<li>
 						<a href="/work" class="text-base font-medium {work ? 'text-light-primary' : 'text-light-secondary'}"
 							>Work</a
 						>
 					</li>
-					<li in:slide={{ duration: 150 }}>
+					<li>
 						<a
 							href="/about"
 							class="text-base font-medium {about ? 'text-light-primary' : 'text-light-secondary'}">About</a
@@ -103,7 +103,7 @@
 	}
 
 	#navbar {
-		max-width: var(--section-xl);
+		max-width: calc(var(--section-xl) - 2rem);
 		margin: auto;
 
 		display: flex;
@@ -193,7 +193,7 @@
 
 	@media (max-width: 58rem) {
 		#navbar {
-			max-width: var(--section-md);
+			max-width: calc(var(--section-md) - 2rem);
 			flex-direction: column;
 
 			background-color: transparent;
