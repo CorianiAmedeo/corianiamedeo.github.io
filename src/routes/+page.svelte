@@ -9,7 +9,7 @@
 	import MoreSkills from "$lib/Sections/MoreSkills.svelte";
 	import Tools from "$lib/Sections/Tools.svelte";
 	import More from "$lib/Sections/More.svelte";
-	import Footer from "$lib/Sections/Footer.svelte";
+	import Footer from "$lib/Footer.svelte";
 </script>
 
 <Navbar home={"true"} />

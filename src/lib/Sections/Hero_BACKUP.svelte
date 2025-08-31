@@ -1,7 +1,7 @@
 <script>
 </script>
 
-<section id="hero" class="background-dark">
+<section id="hero" class="background-primary">
     <img src="/Headline.svg" alt="A product designer that speaks dev." />
 </section>
 
@@ -14,7 +14,7 @@
 	}
 
 	img {
-		padding-top: 32vh;
+		padding-top: 27vh;
 		padding-bottom: 22vh;
 		padding-inline: 5vw;
 		

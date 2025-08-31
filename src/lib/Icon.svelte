@@ -5,6 +5,7 @@
 	import BackArrow from '$lib/Icons/BackArrow.svelte';
 	import Play from '$lib/Icons/Play.svelte';
 	import Pause from '$lib/Icons/Pause.svelte';
+	import BackUp from '$lib/Icons/BackUp.svelte';
 
 	let { name = '', mode = 'light', type = 'primary' } = $props();
 
@@ -14,7 +15,8 @@
 		ForwardArrow,
 		BackArrow,
 		Play,
-		Pause
+		Pause,
+		BackUp
 	};
 
 	let CurrentIcon = $derived(iconComponents[name]);

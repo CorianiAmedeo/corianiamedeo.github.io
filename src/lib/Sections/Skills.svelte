@@ -97,7 +97,7 @@
     }  
 
     #content {
-        margin-inline: var(--space-4);
+        margin-inline: var(--space-6);
         padding-bottom: var(--space-8);
     }
 
@@ -105,7 +105,7 @@
         max-width: var(--section-md);
         margin-inline: auto;
 
-        disPlay: flex;
+        display: flex;
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
@@ -116,7 +116,7 @@
         max-width: var(--section-md);
         margin-inline: auto;
 
-        disPlay: flex;
+        display: flex;
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
@@ -127,11 +127,12 @@
 
     .category-text {
         padding-left: var(--space-8);
+        padding-right: var(--space-8);
         flex-direction: column;
         gap: var(--space-2);
-        max-width: var(--section-xsm);
-        flex-shrink: 1;
-        border-left: 1px solid hsla(var(--detail), .6);
+        border-left: 1px solid hsla(var(--detail), .5);
+        border-right: 1px solid hsla(var(--detail), .5);
+        flex-grow: 1;
     }
 
     .category-text > h3 {
@@ -143,8 +144,8 @@
         flex-direction: row;
         flex-wrap: wrap;
         gap: var(--space-2);
-        flex-shrink: 1;
-        margin: auto;
+        flex-grow: 1;
+        margin: unset;
         justify-content: end;
     }
 
@@ -153,8 +154,13 @@
         flex-direction: row;
         justify-content: end;
         gap: var(--space-2);
-        flex-shrink: 1;
-        margin: none;
+        flex-grow: 1;
+        margin: unset;
+    }
+
+    #categories-buttons > div > div {
+        flex-grow: 1;
+        flex: 50%;
     }
 
     video {
@@ -174,10 +180,18 @@
         #categories {
             flex-wrap: nowrap;
         }
+        
+        .category-text {
+            max-width: var(--section-xsm);
+            padding-right: 0px;
+            border-right: none;
+        }
 
         #categories-buttons, #categories-buttons > div {
             max-width: var(--section-xsm);
             margin-left: auto;
+            flex-grow: 0;
+            flex-shrink: 1;
         }
   
         #content {

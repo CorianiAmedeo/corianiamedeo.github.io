@@ -120,7 +120,7 @@
     }
     
     #title {
-        margin-inline: var(--space-4);
+        margin-inline: var(--space-6);
     }
 
     .content {

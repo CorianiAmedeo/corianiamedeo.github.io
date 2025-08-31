@@ -4,20 +4,18 @@
             <div id="title-line">
                 <h2 class="text-5xl font-base text-light-primary">Hi, i'm <br>Amedeo</h2>
             </div>
-            <div id="profile-text">
-                <div id="card-text" class="text-base font-light text-light-secondary">
+            <div id="intro-text">
+                <div id="card-text-1" class="text-base font-light text-light-secondary">
                     <span>
                         As a designer I navigate cross‑functional 
                         teams to <span class="text-light-primary font-normal">translate ideas into production</span>.
-                        <br />
-                        <br />
+                    </span>
+                </div>
+                <div id="card-text-2" class="text-base font-light text-light-secondary">
+                    <span>
                         Currently working on automotive interfaces @<span class="text-light-primary font-normal">Italdesign</span>, 
                         Turin (a <span class="text-light-primary font-normal">Volkswagen Group company</span>).
                     </span>
-                </div>
-                <div id="profile-pic">
-                    <div class="img-container">
-                    </div>
                 </div>
             </div>
         </div>
@@ -38,46 +36,50 @@
         gap: var(--space-6);
     }
 
-    
-    #profile-pic {
-        display: flex;
-        flex-direction: row;
-        flex: 1;
-
-        width: 5rem;
-    }
-
-    .img-container {
-        flex: 1;
-        aspect-ratio: 1;
-        height: 100%;
-
-        background-image: url("/ProfilePic.png");
-        background-size: contain;
-
-        margin-left: var(--space-8);
-    }
-
-    #profile-text {
+    #intro-text {
         display: flex;
         flex-direction: column;
         gap: var(--space-6);
     }
 
-    #card-text {
+    #card-text-1 {
+        padding-right: var(--space-8);
+        padding-left: var(--space-8);
+        border-left: 1px solid hsla(var(--detail), .5);
         border-right: 1px solid hsla(var(--detail), .5);
     }
 
+    #card-text-2 {
+        padding-right: var(--space-8);
+        padding-left: var(--space-8);
+        border-left: 1px solid hsla(var(--detail), .5);
+        border-right: 1px solid hsla(var(--detail), .5);
+    }
+
+    #card-text-1, #card-text-2 {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
     @media screen and (min-width: 37rem) {
-        #profile-text {
+        #intro-text {
             flex-direction: row;
             gap: 0rem;
         }
 
-        #card-text {
+        #card-text-1 {
+            padding-right: var(--space-4);
             padding-left: var(--space-8);
             border-left: 1px solid hsla(var(--detail), .5);
             border-right: 0px;
+        }
+
+        #card-text-2 {
+            padding-right: var(--space-8);
+            padding-left: var(--space-4);
+            border-left: 0px;
+            border-right: 1px solid hsla(var(--detail), .5);
         }
     }
 
@@ -92,11 +94,11 @@
             flex-basis: 33%;
         }
         
-        #profile-text {
+        #intro-text {
             flex-basis: 67%;
         }
 
-        #profile-text > * {
+        #intro-text > * {
             flex-basis: 50%;
         }
     }

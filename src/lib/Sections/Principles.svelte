@@ -30,75 +30,77 @@
     </div>
 </section>
 <section  class="background-light slideshow-container">
-  <div class="slideshow slideshow-{slideshow_anim}">   
-    <div class="slide-item">
-        <div>🚕</div>
-        <h3 class="text-dark-primary text-lg font-semibold">Title</h3>
-        <p class="text-dark-primary font-normal">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-    </div>   
-    <div class="slide-item">
-        <div>🚕</div>
-        <h3 class="text-dark-primary text-lg font-semibold">Title</h3>
-        <p class="text-dark-primary font-normal">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-    </div>   
-    <div class="slide-item">
-        <div>🚕</div>
-        <h3 class="text-dark-primary text-lg font-semibold">Title</h3>
-        <p class="text-dark-primary font-normal">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-    </div>   
-    <div class="slide-item">
-        <div>🚕</div>
-        <h3 class="text-dark-primary text-lg font-semibold">Title</h3>
-        <p class="text-dark-primary font-normal">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-    </div>   
-    <div class="slide-item">
-        <div>🚕</div>
-        <h3 class="text-dark-primary text-lg font-semibold">Title</h3>
-        <p class="text-dark-primary font-normal">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-    </div>   
-    <div class="slide-item">
-        <div>🚕</div>
-        <h3 class="text-dark-primary text-lg font-semibold">Title</h3>
-        <p class="text-dark-primary font-normal">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    <div id="slideshow-max-width">
+        <div class="slideshow slideshow-{slideshow_anim}">   
+            <div class="slide-item">
+                <div>🚕</div>
+                <h3 class="text-dark-primary text-lg font-semibold">Title</h3>
+                <p class="text-dark-primary font-normal">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>   
+            <div class="slide-item">
+                <div>🚕</div>
+                <h3 class="text-dark-primary text-lg font-semibold">Title</h3>
+                <p class="text-dark-primary font-normal">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>   
+            <div class="slide-item">
+                <div>🚕</div>
+                <h3 class="text-dark-primary text-lg font-semibold">Title</h3>
+                <p class="text-dark-primary font-normal">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>   
+            <div class="slide-item">
+                <div>🚕</div>
+                <h3 class="text-dark-primary text-lg font-semibold">Title</h3>
+                <p class="text-dark-primary font-normal">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>   
+            <div class="slide-item">
+                <div>🚕</div>
+                <h3 class="text-dark-primary text-lg font-semibold">Title</h3>
+                <p class="text-dark-primary font-normal">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>   
+            <div class="slide-item">
+                <div>🚕</div>
+                <h3 class="text-dark-primary text-lg font-semibold">Title</h3>
+                <p class="text-dark-primary font-normal">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+        </div>
+        <div aria-hidden="true" class="slideshow slideshow-{slideshow_anim}">   
+            <div class="slide-item">
+                <div>🚕</div>
+                <h3 class="text-dark-primary text-lg font-semibold">Title</h3>
+                <p class="text-dark-primary font-normal">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>   
+            <div class="slide-item">
+                <div>🚕</div>
+                <h3 class="text-dark-primary text-lg font-semibold">Title</h3>
+                <p class="text-dark-primary font-normal">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>   
+            <div class="slide-item">
+                <div>🚕</div>
+                <h3 class="text-dark-primary text-lg font-semibold">Title</h3>
+                <p class="text-dark-primary font-normal">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>   
+            <div class="slide-item">
+                <div>🚕</div>
+                <h3 class="text-dark-primary text-lg font-semibold">Title</h3>
+                <p class="text-dark-primary font-normal">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>   
+            <div class="slide-item">
+                <div>🚕</div>
+                <h3 class="text-dark-primary text-lg font-semibold">Title</h3>
+                <p class="text-dark-primary font-normal">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>   
+            <div class="slide-item">
+                <div>🚕</div>
+                <h3 class="text-dark-primary text-lg font-semibold">Title</h3>
+                <p class="text-dark-primary font-normal">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+        </div>
     </div>
-  </div>
-  <div aria-hidden="true" class="slideshow slideshow-{slideshow_anim}">   
-    <div class="slide-item">
-        <div>🚕</div>
-        <h3 class="text-dark-primary text-lg font-semibold">Title</h3>
-        <p class="text-dark-primary font-normal">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-    </div>   
-    <div class="slide-item">
-        <div>🚕</div>
-        <h3 class="text-dark-primary text-lg font-semibold">Title</h3>
-        <p class="text-dark-primary font-normal">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-    </div>   
-    <div class="slide-item">
-        <div>🚕</div>
-        <h3 class="text-dark-primary text-lg font-semibold">Title</h3>
-        <p class="text-dark-primary font-normal">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-    </div>   
-    <div class="slide-item">
-        <div>🚕</div>
-        <h3 class="text-dark-primary text-lg font-semibold">Title</h3>
-        <p class="text-dark-primary font-normal">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-    </div>   
-    <div class="slide-item">
-        <div>🚕</div>
-        <h3 class="text-dark-primary text-lg font-semibold">Title</h3>
-        <p class="text-dark-primary font-normal">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-    </div>   
-    <div class="slide-item">
-        <div>🚕</div>
-        <h3 class="text-dark-primary text-lg font-semibold">Title</h3>
-        <p class="text-dark-primary font-normal">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-    </div>
-  </div>
 </section>
 
 <style>   
     #content {
-        margin-inline: var(--space-4);
+        margin-inline: var(--space-6);
         padding-bottom: var(--space-8);
     }
 
@@ -118,9 +120,14 @@
         gap: var(--space-2);
     }
 
-    .slideshow-container {
+    #slideshow-max-width {
         display: flex;
         flex-direction: row;
+        margin: auto;
+        overflow-x: hidden;
+        
+        width: 102.5rem;
+        max-width: 100%;
     }
 
     .slideshow {
@@ -179,6 +186,12 @@
         #title-line {
             max-width: var(--section-xl);
             margin-inline: auto;
+        }
+    }
+
+    @media screen and (min-width: 100rem) {
+        #slideshow-max-width {
+            mask-image: linear-gradient(90deg,transparent 0%, #000 15%, #000 85%, transparent);
         }
     }
 </style>

@@ -69,6 +69,7 @@
 		justify-content: center;
 		flex-shrink: 0;
 		flex-grow: 1;
+		white-space: nowrap;
 	}
 
 	button {
@@ -109,7 +110,7 @@
 	}
 
 	.primary-light:hover {
-		color: hsla(var(--neutral-light), 1);
+		background-color: hsl(0, 0%, 2%);
 	}
 
 	.secondary-light:hover {
@@ -117,7 +118,7 @@
 	}
 
 	.primary-dark:hover {
-		background-color: #fff;
+		background-color: hsl(0, 0%, 98%);
 	}
 
 	.secondary-dark:hover {

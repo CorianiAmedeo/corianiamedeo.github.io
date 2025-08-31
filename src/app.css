@@ -84,7 +84,8 @@
     /* Neutral Dark */
     --neutral-dark-h: 240;
     --neutral-dark-s: 11%;
-    --neutral-dark-l: 8%;
+    --neutral-dark-l: 10%;
+    --neutral-dark-l-high: 14%;
     
     /* Neutral Light */
     --neutral-light-h: 60;

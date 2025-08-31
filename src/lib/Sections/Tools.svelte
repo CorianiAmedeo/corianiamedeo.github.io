@@ -146,7 +146,7 @@
 
 <style>   
     #content {
-        margin-inline: var(--space-4);
+        margin-inline: var(--space-6);
         padding-bottom: var(--space-8);
     }
 
@@ -169,6 +169,10 @@
     .slideshow-container {
         display: flex;
         flex-direction: row;
+        margin: auto;
+        
+        width: 102.5rem;
+        max-width: 100%;
     }
 
     .slideshow {
@@ -223,6 +227,12 @@
         #title-line {
             max-width: var(--section-xl);
             margin-inline: auto;
+        }
+    }
+
+    @media screen and (min-width: 100rem) {
+        .slideshow-container {
+            mask-image: linear-gradient(90deg,transparent 0%, #000 15%, #000 85%, transparent);
         }
     }
 </style>
