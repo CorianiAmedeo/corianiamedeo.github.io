@@ -1,0 +1,262 @@
+@import './reset.css';
+@import './icons.css';
+
+@font-face {
+  font-family: "Inter";
+  src: url("/inter/Inter-VariableFont_opsz,wght.ttf");
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("/inter/Inter-Italic-VariableFont_opsz,wght.ttf");
+  font-style: italic;
+}
+
+:root {
+    --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+    
+     /* Font Weights */
+    --font-light: 200;
+    --font-normal: 300;
+    --font-medium: 400;
+    --font-semibold: 500;
+    --font-bold: 600;
+    
+    /* Font Sizes */
+    --font-size-xs: 0.75rem;    /* 12px */
+    --font-size-sm: 0.875rem;   /* 14px */
+    --font-size-base: 1rem;     /* 16px */
+    --font-size-lg: 1.125rem;   /* 18px */
+    --font-size-xl: 1.25rem;    /* 20px */
+    --font-size-2xl: 1.5rem;    /* 24px */
+    --font-size-3xl: 1.875rem;  /* 30px */
+    --font-size-4xl: 2.25rem;   /* 36px */
+    --font-size-5xl: 3rem;      /* 48px */
+    --font-size-6xl: 3.75rem;   /* 60px */
+    --font-size-7xl: 4.5rem;    /* 72px */
+    --font-size-8xl: 6rem;      /* 96px */
+
+    /* Line-height */
+    --line-height-xs: 200%;  
+    --line-height-sm: 200%; 
+    --line-height-base: 150%;   
+    --line-height-lg: 150%; 
+    --line-height-xl: 125%;  
+    --line-height-2xl: 125%;  
+    --line-height-3xl: 110%;
+    --line-height-4xl: 110%; 
+    --line-height-5xl: 100%;    
+    --line-height-6xl: 100%; 
+    --line-height-7xl: 95%;
+    --line-height-8xl: 95%;
+
+
+    /* Letter-spacing */
+    --letter-spacing-xs: 0.04em;  
+    --letter-spacing-sm: 0.04em; 
+    --letter-spacing-base: 0.02em;   
+    --letter-spacing-lg: 0.02em; 
+    --letter-spacing-xl: 0em;  
+    --letter-spacing-2xl: 0em;  
+    --letter-spacing-3xl: 0em;
+    --letter-spacing-4xl: 0em; 
+    --letter-spacing-5xl: -0.02em;    
+    --letter-spacing-6xl: -0.02em; 
+    --letter-spacing-7xl: -0.04em;
+    --letter-spacing-8xl: -0.04em;
+
+
+    /* Spacing */
+    --space-1: 0.25rem;    /* 4px */
+    --space-2: 0.5rem;     /* 8px */
+    --space-3: 0.75rem;    /* 12px */
+    --space-4: 1rem;       /* 16px */
+    --space-6: 1.5rem;     /* 24px */
+    --space-8: 2rem;       /* 32px */
+    --space-12: 3rem;      /* 48px */
+    --space-16: 4rem;      /* 64px */
+    --space-24: 6rem;      /* 96px */
+    --space-32: 8rem;      /* 128px */
+    --space-48: 12rem;     /* 192px */
+    --space-64: 16rem;     /* 256px */
+    --space-96: 24rem;     /* 384px */
+    --space-128: 32rem;    /* 512px */
+    --space-160: 40rem;    /* 640px */
+    --space-192: 48rem;    /* 768px */
+
+    /*Section spacing*/
+    --section-space: var(--space-24); /* 96px */
+
+    /* Radius */
+    --radius: .5rem;
+
+    /* Brand color */
+    --h: 245;
+  
+    /* Neutral Dark */
+    --neutral-dark-h: var(--h);
+    --neutral-dark-s: 5%;
+    --neutral-dark-l: 5%;
+
+    --neutral-dark-s-high: 10%;
+    --neutral-dark-l-high: 10%;
+    
+    /* Neutral Light */
+    --neutral-light-h: var(--h);
+    --neutral-light-s: 5%;
+    --neutral-light-l: 95%;
+    
+    /* Backgrounds */
+    --background: var(--neutral-dark-h), var(--neutral-dark-s), 0%;
+
+    /* Surfaces */
+    --surface: var(--neutral-dark-h), var(--neutral-dark-s), var(--neutral-dark-l);
+    --surface-high: var(--neutral-dark-h), var(--neutral-dark-s-high), var(--neutral-dark-l-high);
+    
+    /* Borders */
+    --border-color: var(--neutral-light-h), var(--neutral-light-s), var(--neutral-light-l);
+    --border-opacity: 12%;
+
+    /* Text Colors */
+    --dark-text-l: 5%;
+    --dark-text-l-gradient: 15%;
+    --dark-text-l-low: 30%;
+    
+    --light-text-l: 95%;
+    --light-text-l-gradient: 80%;
+    --light-text-l-low: 70%;
+
+    --dark-text: var(--neutral-dark-h), var(--neutral-dark-s), var(--dark-text-l);
+    --dark-text-gradient: var(--neutral-dark-h), var(--neutral-dark-s), var(--dark-text-l-gradient);
+    --dark-text-low: var(--neutral-dark-h), var(--neutral-dark-s), var(--dark-text-l-low);
+    
+    --light-text: var(--neutral-light-h), var(--neutral-light-s), var(--light-text-l);
+    --light-text-gradient: var(--neutral-light-h), var(--neutral-light-s), var(--light-text-l-gradient);
+    --light-text-low: var(--neutral-light-h), var(--neutral-light-s), var(--light-text-l-low);
+}
+
+html, body {
+    background-color: hsl(var(--background));
+}
+
+.hidden {
+    display: none;
+}
+
+.surface-base {
+    background-color: hsl(var(--surface));
+}
+
+.surface-high {
+    background-color: hsl(var(--surface-high));
+}
+
+.rounded {
+    border-radius: var(--radius);
+}
+
+*, html, body, p {
+    font-family: var(--font-family);
+}
+
+html, body, p, .text-high {
+    color: hsl(var(--light-text));
+}
+
+.text-low {
+    color: hsl(var(--light-text-low));   
+}
+
+
+.text-light { 
+    font-weight: var(--font-light);
+}
+
+html, body, p, .text-normal { 
+    font-weight: var(--font-normal);
+}
+
+.text-medium {
+    font-weight: var(--font-medium);
+}
+
+.text-semibold {
+     font-weight: var(--font-semibold);
+}
+
+.text-bold {
+     font-weight: var(--font-bold);
+}
+
+.text-xs {
+    font-size: var(--font-size-xs);
+    line-height: var(--line-height-xs);
+    letter-spacing: var(--letter-spacing-xs);
+}
+
+.text-sm {
+    font-size: var(--font-size-sm);
+    line-height: var(--line-height-sm);
+    letter-spacing: var(--letter-spacing-sm);
+}
+
+html, body, p, .text-base {
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-base);
+    letter-spacing: var(--letter-spacing-base);
+}
+
+.text-lg {
+    font-size: var(--font-size-lg);
+    line-height: var(--line-height-lg);
+    letter-spacing: var(--letter-spacing-lg);
+}
+
+.text-xl {
+    font-size: var(--font-size-xl);
+    line-height: var(--line-height-xl);
+    letter-spacing: var(--letter-spacing-xl);
+}
+
+.text-2xl {
+    font-size: var(--font-size-2xl);
+    line-height: var(--line-height-2xl);
+    letter-spacing: var(--letter-spacing-2xl);
+}
+
+.text-3xl {
+    font-size: var(--font-size-3xl);
+    line-height: var(--line-height-3xl);
+    letter-spacing: var(--letter-spacing-3xl);
+}
+
+.text-4xl {
+    font-size: var(--font-size-4xl);
+    line-height: var(--line-height-4xl);
+    letter-spacing: var(--letter-spacing-4xl);
+}
+
+.text-5xl { 
+    font-size: var(--font-size-5xl);
+    line-height: var(--line-height-5xl);
+    letter-spacing: var(--letter-spacing-5xl);
+}
+
+.text-6xl { 
+    font-size: var(--font-size-6xl);
+    line-height: var(--line-height-6xl);
+    letter-spacing: var(--letter-spacing-6xl);
+}
+
+.text-7xl { 
+    font-size: var(--font-size-7xl);
+    line-height: var(--line-height-7xl);
+    letter-spacing: var(--letter-spacing-7xl);
+}
+
+.text-8xl { 
+    font-size: var(--font-size-8xl);
+    line-height: var(--line-height-8xl);
+    letter-spacing: var(--letter-spacing-8xl);
+}

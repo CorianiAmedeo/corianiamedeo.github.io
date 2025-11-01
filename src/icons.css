@@ -1,0 +1,16 @@
+.icon-24 {
+   /* Add dimensions to span */
+   display: inline-block;
+   width: 1.5rem;
+   height: 1.5rem;
+   /* Add background color */
+   background-color: currentColor;
+   /* Add mask image, use variable to reduce duplication */
+   --svg: url('/icons/placeHolder.svg');
+   -webkit-mask-image: var(--svg);
+   mask-image: var(--svg);
+   -webkit-mask-repeat: no-repeat;
+   mask-repeat: no-repeat;
+   -webkit-mask-size: 100% 100%;
+   mask-size: 100% 100%;
+}
