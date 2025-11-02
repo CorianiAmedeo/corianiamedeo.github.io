@@ -1,12 +1,43 @@
-.icon-24 {
+.icon-star {
    /* Add dimensions to span */
-   display: inline-block;
    width: 1.5rem;
    height: 1.5rem;
    /* Add background color */
    background-color: currentColor;
    /* Add mask image, use variable to reduce duplication */
-   --svg: url('/icons/placeHolder.svg');
+   --svg: url('/icons/Star.svg');
+   -webkit-mask-image: var(--svg);
+   mask-image: var(--svg);
+   -webkit-mask-repeat: no-repeat;
+   mask-repeat: no-repeat;
+   -webkit-mask-size: 100% 100%;
+   mask-size: 100% 100%;
+}
+
+.combinationmark {
+   /* Add dimensions to span */
+   width: 10.631875rem;
+   height: 1.5rem;
+   /* Add background color */
+   background-color: currentColor;
+   /* Add mask image, use variable to reduce duplication */
+   --svg: url('/CombinationMark.svg');
+   -webkit-mask-image: var(--svg);
+   mask-image: var(--svg);
+   -webkit-mask-repeat: no-repeat;
+   mask-repeat: no-repeat;
+   -webkit-mask-size: 100% 100%;
+   mask-size: 100% 100%;
+}
+
+.icon-burgermenu {
+   /* Add dimensions to span */
+   width: 1.5rem;
+   height: 1.5rem;
+   /* Add background color */
+   background-color: currentColor;
+   /* Add mask image, use variable to reduce duplication */
+   --svg: url('/icons/HamburgerMenu.svg');
    -webkit-mask-image: var(--svg);
    mask-image: var(--svg);
    -webkit-mask-repeat: no-repeat;

@@ -88,8 +88,11 @@
     /*Section spacing*/
     --section-space: var(--space-24); /* 96px */
 
+    /*Section width*/
+    --section-xl: 75rem;
+
     /* Radius */
-    --radius: .5rem;
+    --radius: .25rem;
 
     /* Brand color */
     --h: 245;
@@ -113,6 +116,9 @@
     /* Surfaces */
     --surface: var(--neutral-dark-h), var(--neutral-dark-s), var(--neutral-dark-l);
     --surface-high: var(--neutral-dark-h), var(--neutral-dark-s-high), var(--neutral-dark-l-high);
+
+    /* Buttons */
+    --btn-primary: var(--neutral-light-h), var(--neutral-light-s), var(--neutral-light-l);
     
     /* Borders */
     --border-color: var(--neutral-light-h), var(--neutral-light-s), var(--neutral-light-l);
@@ -138,6 +144,7 @@
 
 html, body {
     background-color: hsl(var(--background));
+    scroll-behavior: smooth;
 }
 
 .hidden {
@@ -152,6 +159,10 @@ html, body {
     background-color: hsl(var(--surface-high));
 }
 
+.border-default {
+    border: 1px solid hsla(var(--border-color), var(--border-opacity));
+}
+
 .rounded {
     border-radius: var(--radius);
 }
@@ -163,11 +174,6 @@ html, body {
 html, body, p, .text-high {
     color: hsl(var(--light-text));
 }
-
-.text-low {
-    color: hsl(var(--light-text-low));   
-}
-
 
 .text-light { 
     font-weight: var(--font-light);
@@ -259,4 +265,12 @@ html, body, p, .text-base {
     font-size: var(--font-size-8xl);
     line-height: var(--line-height-8xl);
     letter-spacing: var(--letter-spacing-8xl);
+}
+
+.right-aligned {
+    text-align: right;
+}
+
+.center-aligned {
+    text-align: center;
 }
